@@ -1,0 +1,60 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion rootProject.compileSdkVersion
+    buildToolsVersion rootProject.buildToolsVersion
+    defaultConfig {
+        applicationId "forcast.sniper.com.forcast"
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        debug {
+            debuggable true
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    testOptions {
+        unitTests {
+            returnDefaultValues true
+        }
+    }
+}
+
+dependencies {
+
+    implementation rootProject.libraries.kotlinStandards
+    implementation rootProject.libraries.supportConstrtaintLayout
+    implementation rootProject.libraries.supportCardView
+    implementation rootProject.libraries.supportDesign
+    implementation rootProject.libraries.supportAppcompatV7
+    implementation rootProject.libraries.rxJava2
+    implementation rootProject.libraries.rxAndroid
+    implementation rootProject.libraries.dagger
+
+    implementation rootProject.libraries.rxPermissions
+    implementation rootProject.libraries.googlePlayServiceLocation
+
+    kapt rootProject.libraries.daggerCompiler
+    annotationProcessor rootProject.libraries.javaxAnnotationProcessor
+
+    api project(':api')
+
+    commonTestDependencies(it)
+    commonAndroidTestDependencies(it)
+}
+
+task preCommit(dependsOn: ['testDebugUnitTest', 'assembleDebugAndroidTest'])

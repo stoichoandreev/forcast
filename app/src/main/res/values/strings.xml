@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Forcast</string>
+    <string name="no_location">No location set</string>
+    <string name="invalid_address">Can\'t not find last location address</string>
+    <string name="invalid_lat_long_used">Not valid location lat and lng</string>
+</resources>
