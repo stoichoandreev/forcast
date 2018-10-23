@@ -7,7 +7,7 @@ import io.reactivex.Observable
 import io.reactivex.Scheduler
 import java.io.IOException
 
-class CityIdService(private val context: Context,
+open class CityIdService(private val context: Context,
                     private val notifications: Scheduler,
                     private val worker: Scheduler) {
 

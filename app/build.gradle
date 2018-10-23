@@ -53,7 +53,7 @@ dependencies {
 
     api project(':api')
 
-    commonTestDependencies(it)
+    commonKotlinTestDependencies(it)
     commonAndroidTestDependencies(it)
 }
 

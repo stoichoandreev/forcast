@@ -17,6 +17,10 @@ class MainActivityPresenterImp constructor(private var view: MainActivityPresent
         this.view = null
     }
 
+    override fun destroy() {
+        disposables.dispose()
+    }
+
     override fun fetchForecast(addressOutput: String) {
         val addressFragments = addressOutput.split(System.getProperty("line.separator"))
         val countryCode = addressFragments[0]

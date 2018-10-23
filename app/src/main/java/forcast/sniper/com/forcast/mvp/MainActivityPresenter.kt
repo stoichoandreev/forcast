@@ -8,6 +8,8 @@ interface MainActivityPresenter {
 
     fun detachView()
 
+    fun destroy()
+
     fun fetchForecast(addressOutput: String)
 
     interface View {

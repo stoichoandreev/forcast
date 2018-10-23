@@ -6,7 +6,7 @@ import forcast.sniper.com.forcast.viewmodels.MainActivityViewModel
 import io.reactivex.Observable
 import io.reactivex.Scheduler
 
-class MainActivityForecastService(private val api: MainScreenApi,
+open class MainActivityForecastService(private val api: MainScreenApi,
                                   private val converter: MainActivityViewModelConverter,
                                   private val notifications: Scheduler,
                                   private val worker: Scheduler) {

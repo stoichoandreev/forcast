@@ -5,12 +5,6 @@ compileJava {
     targetCompatibility = JavaVersion.VERSION_1_8
 }
 
-test {
-    testLogging {
-        showStandardStreams = true
-    }
-}
-
 dependencies {
 
     compile rootProject.libraries.gson

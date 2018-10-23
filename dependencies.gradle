@@ -73,16 +73,6 @@ ext {
     ]
 }
 
-ext.commonTestDependencies = { dependencies ->
-    dependencies.testImplementation librariesTest.JUnit
-    dependencies.testImplementation librariesTest.mockitoCore
-    dependencies.testImplementation librariesTest.assertJCore
-    dependencies.testImplementation librariesTest.powerMockModuleJunit4
-    dependencies.testImplementation (librariesTest.powerMockMockito) {
-        exclude module: 'mockito-all'
-    }
-}
-
 ext.commonKotlinTestDependencies = { dependencies ->
     dependencies.testImplementation librariesTest.JUnit
     dependencies.testImplementation librariesTest.mockitoCore
